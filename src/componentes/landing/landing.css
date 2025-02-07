@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Pokemon+Solid&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --accent: #ffd700;
+    --accent-dark: #ffc800;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --background: var(--bg-primary);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --shadow: rgba(0, 0, 0, 0.2);
+    --title-font: 'Pokemon Solid', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+
+.landing-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    padding: 2rem;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--body-font);
+}
+
+.landing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInDown 1s ease;
+}
+
+.landing-header h1 {
+    font-family: var(--title-font);
+    font-size: 3.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px var(--shadow);
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.landing-header h1:hover {
+    transform: scale(1.05);
+}
+
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.landing-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease 0.3s backwards;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.1);
+}
+
+.feature-card h2 {
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.feature-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-list li::before {
+    content: "✦";
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.about-section {
+    margin: 4rem 0;
+    animation: fadeInUp 1s ease 0.6s backwards;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.landing-footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    animation: fadeInUp 1s ease 0.9s backwards;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .landing-main {
+        padding: 1rem;
+    }
+    
+    .feature-card,
+    .about-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-header h1 {
+        font-size: 2rem;
+    }
+    
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+}

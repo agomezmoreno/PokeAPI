@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Pokemon+Solid&family=Roboto:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --accent: #ffd700;
+  --accent-dark: #ffc800;
+  --text: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(0, 0, 0, 0.2);
+  --title-font: 'Pokemon Solid', sans-serif;
+  --body-font: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  font-family: var(--body-font);
+}
+
+.pokemon-page {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  padding: 2rem;
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 4px var(--shadow);
+  font-family: var(--title-font);
+  letter-spacing: 2px;
+}
+
+.container-pokemons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.lista-pokemons {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 32px var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lista-pokemons:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px rgba(255,215,0,0.2);
+}
+
+.lista-pokemons img {
+  width: 150px;
+  height: 150px;
+  margin: -1rem auto 1rem;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(255,215,0,0.3));
+}
+
+.lista-pokemons:hover img {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.lista-pokemons p {
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 1rem 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  font-family: var(--body-font);
+}
+
+.lista-pokemons button,
+.cargar-mas {
+  background: linear-gradient(145deg, var(--accent), var(--accent-dark));
+  color: var(--bg-primary);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(255,215,0,0.2);
+  font-family: var(--body-font);
+}
+
+.lista-pokemons button:hover,
+.cargar-mas:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,215,0,0.3);
+  background: linear-gradient(145deg, var(--accent-dark), var(--accent));
+}
+
+.cargar-mas-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+@media (max-width: 768px) {
+  .container-pokemons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  h1 { 
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-pokemons {
+    grid-template-columns: 1fr;
+  }
+  h1 { 
+    font-size: 2rem;
+  }
+  .cargar-mas {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
